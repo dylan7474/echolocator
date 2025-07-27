@@ -1,6 +1,6 @@
 # Makefile.linux for Echolocator v2
 CC = gcc
-TARGET = echolocator_v2
+TARGET = echolocator
 SRCS = main.c
 CFLAGS = -Wall -O2 `sdl2-config --cflags`
 LDFLAGS = -lSDL2_mixer -lSDL2_ttf `sdl2-config --libs` -lm
