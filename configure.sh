@@ -105,7 +105,7 @@ fi
 echo "----------------------------------------------------"
 if [ "$ALL_OK" = true ]; then
     echo -e "${GREEN}Environment is correctly configured!${NC}"
-    echo "You can now run 'make' or 'make -f Makefile.linux' to build."
+    echo "You can now run 'make' to build for Linux."
     echo "To build for Windows, run 'make -f Makefile.win'."
     exit 0
 else
