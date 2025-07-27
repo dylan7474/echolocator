@@ -1,0 +1,19 @@
+# Makefile.win for Echolocator v2
+CC = x86_64-w64-mingw32-gcc
+TARGET = echolocator.exe
+SRCS = main.c
+CFLAGS = -I/usr/x86_64-w64-mingw32/include/SDL2 \
+         -Wall -O2
+
+# This LDFLAGS line is the crucial part. It includes all the necessary
+# Windows system libraries that SDL depends on.
+LDFLAGS = -L/usr/x86_64-w64-mingw32/lib \
+          -lmingw32 -lSDL2main -lSDL2_mixer -lSDL2_ttf -lSDL2 \
+          -lwinmm -lgdi32 -limm32 -lole32 -loleaut32 -lversion -lsetupapi -lrpcrt4 \
+          -lm -mwindows -static
+
+all: $(TARGET)
+$(TARGET): $(SRCS)
+	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET) $(LDFLAGS)
+clean:
+	rm -f $(TARGET)
